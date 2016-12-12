@@ -1,0 +1,110 @@
+*
+{ 
+	box-sizing: border-box;
+}
+
+span{
+	margin: 0px 10px;
+}
+
+button
+{
+	cursor: pointer;
+}
+
+main.container
+{
+	min-width: 70%;
+	width: 700px;
+	border: 2px solid #EAEAEA;
+	border-radius: 5px;
+	margin: auto;
+}
+
+section.queryContainer
+{
+	border-bottom: 2px solid #EAEAEA;
+	min-height: 70px;
+}
+
+section.resultsContainer
+{
+	min-height: 100px;
+}
+
+div.resultCount
+{
+	float: left;
+	margin: 10px;
+	font-weight: bold;
+}
+
+div.pagination
+{
+	float: right;
+	margin: 10px;
+	font-weight: bold;
+}
+
+div.queryBox
+{
+	width: 400px;
+	margin: auto;
+	padding-top: 25px;
+}
+
+input.queryTextBox
+{
+	width: 300px;
+}
+
+div.entry
+{
+	width: 90%;
+	height: 100px;
+	margin: 10px auto 10px auto;
+	clear: both;
+	border: 1px solid #EAEAEA;
+	box-shadow: 1px 2px 8px #000000;
+}
+
+div.preview, div.info
+{
+	float: left;
+	height: 100%
+}
+
+div.preview
+{
+	width: 100px;
+	height: 85px;
+	border: 1px solid #C0C0C0;
+	margin: 5px;
+}
+
+div.preview > img
+{
+	background-size: 100% 100%;
+	display: block;
+	margin: auto;
+	margin-top: 15px;
+}
+
+div.info
+{
+	max-width: 500px;
+}
+
+div#displayName
+{
+	font-weight: bold;
+	font-size: 19px;
+	margin: 10px 0px 5px 10px;
+	text-decoration: none;
+    border-bottom: 1px solid #EAEAEA;
+}
+
+div#gameInfo, div#desc
+{
+	margin-left: 25px;
+}

@@ -1,0 +1,50 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Twitch Query Page</title>
+  <meta name="author" content="Tirumal Panganamala">
+
+  <!-- JavaScript --> 
+  <script type="text/javascript" src="js/twitch.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="styles/twitch.css">
+</head>
+<body onload="APP.init()">
+  <main class="container">
+  	<section class="queryContainer">
+        <div class="queryBox">
+            <input id="searchBox" class="queryTextBox" type="text" placeholder="Search Query..."/>
+            <button id="searchButton">Search</button>
+        </div>
+    </section>
+    <section class="resultsContainer" id="resultsContainer" style="display: none;">
+
+        <div class="resultCount" id="resultCount">Total Results: </div>
+        <div class="pagination">
+            <button id="prevBtn"><</button>
+            <span id="page"></span>
+            <button id="nextBtn">></button>
+        </div>
+
+        <div id="resultsArea">            
+        </div>
+
+        <template id="resultEntryTemplate">
+          <div class="entry">
+              <div class="preview"><img src=""/></div>
+              <div class="info">
+                  <div id="displayName"></div>
+                  <div id="gameInfo"></div>
+                  <div id="desc"><b>Description: </b></div>
+              </div>
+          </div>
+        </template>
+
+    </section>
+  </main>
+</body>
+
+</html>
