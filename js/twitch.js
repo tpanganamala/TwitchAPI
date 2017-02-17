@@ -1,8 +1,8 @@
 var APP = APP || {};
 
-//Results per page - will be delievered in blocks of 10. Server will provide the next 10 
-//when client requests it. 
-APP.limit = 10;
+//Results per page - will be delievered in blocks of 10. Server will provide the next 10
+//when client requests it.
+APP.limit = 20;
 APP.url = "https://api.twitch.tv/kraken/search/streams?client_id=jm0p9mftpjmm92knye870nwhthlrej&limit=" + APP.limit;
 APP.searchTerm = "";
 
@@ -70,7 +70,7 @@ APP.requestData = function(url, callback, offset)
 }
 
 APP.updateModel = function(data)
-{	
+{
 	//Update local model with results from query
 	this.model = {};
 	this.model.streamData = data.streams;
@@ -84,7 +84,7 @@ APP.updateCounts = function()
 {
 	//Update results and pagination counts
 	document.getElementById("resultCount").innerHTML = "Total Results: " + this.model.totalRows;
-	document.getElementById("page").innerHTML = (APP.offset / APP.limit + 1) + " / " + 
+	document.getElementById("page").innerHTML = (APP.offset / APP.limit + 1) + " / " +
 					(Math.ceil(this.model.totalRows / APP.limit) == 0 ? 1 : Math.ceil(this.model.totalRows / APP.limit) );
 }
 
@@ -118,16 +118,16 @@ APP.updateResults = function()
 	//Parse through results and display
 	this.model.streamData.forEach(function(item)
 	{
-		//Grab the template and dynamically create entries based on the template format 
+		//Grab the template and dynamically create entries based on the template format
 		var template = document.querySelector('#resultEntryTemplate');
 
 		// Populate the src and template content with results from query
-		template.content.querySelector('img').src = item.preview.small;
+		template.content.querySelector('img').src = item.preview.large;
 		template.content.querySelector('div#displayName').textContent = item.channel.display_name;
 		template.content.querySelector('div#gameInfo').textContent = (item.game || "Game Info N/A") + " - " + item.viewers + " viewers";
 		template.content.querySelector('div#desc').textContent = item.channel.status || "Description N/A";
 
-		//deep copy of clone, add it to the results area. 
+		//deep copy of clone, add it to the results area.
 		var clone = document.importNode(template.content, true);
 		document.getElementById("resultsArea").appendChild(clone);
 	})

@@ -6,7 +6,7 @@
   <title>Twitch Query Page</title>
   <meta name="author" content="Tirumal Panganamala">
 
-  <!-- JavaScript --> 
+  <!-- JavaScript -->
   <script type="text/javascript" src="js/twitch.js"></script>
 
   <!-- CSS -->
@@ -22,26 +22,27 @@
     </section>
     <section class="resultsContainer" id="resultsContainer" style="display: none;">
 
+      <section>
         <div class="resultCount" id="resultCount">Total Results: </div>
         <div class="pagination">
             <button id="prevBtn"><</button>
             <span id="page"></span>
             <button id="nextBtn">></button>
         </div>
+      </section>
 
-        <div id="resultsArea">            
-        </div>
-
-        <template id="resultEntryTemplate">
-          <div class="entry">
-              <div class="preview"><img src=""/></div>
-              <div class="info">
-                  <div id="displayName"></div>
-                  <div id="gameInfo"></div>
-                  <div id="desc"><b>Description: </b></div>
-              </div>
+      <div id="resultsArea"></div>
+      
+      <template id="resultEntryTemplate">
+        <div class="entry">
+          <div class="image"><img src=""/></div>
+          <div class="desc">
+            <div class="displayName" id="displayName"></div>
+            <div class="gameInfo" id="gameInfo"></div>
+            <div class="desc" id="desc"></div>
           </div>
-        </template>
+        </div>
+      </template>
 
     </section>
   </main>
